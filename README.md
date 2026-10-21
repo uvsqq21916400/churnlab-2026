@@ -6,7 +6,7 @@ The target column is `Churn` (`Yes` / `No`). It must never be used as a model in
 
 ## Environment
 - Python: 3.11 (3.12 also accepted)
-- Package manager: uv (lock created with uv 0.13.4)
+- Package manager: uv 0.13.4 or newer (the lock was created with 0.13.4, an older uv may not read it)
 
 ```sh
 uv sync --locked
@@ -24,6 +24,8 @@ uv run python scripts/download_data.py   # downloads the CSV and records its sou
 uv run python scripts/inspect_telco.py   # checks the hash and writes reports/tp01_data_overview.json
 ```
 Expected: 7,043 rows, 21 columns, 1,869 churners (~26.5%), 11 blank `TotalCharges`.
+
+Run `download_data.py` before `inspect_telco.py`: the CSV is not in the repo, so a fresh clone has to download it first.
 
 The raw CSV is not committed; only its source and hash (`data/raw/telco.source.json`) are.
 
