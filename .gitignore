@@ -1,0 +1,21 @@
+# Environnements
+.venv/
+.venv-backup/
+.venv-backup-*/
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+
+# Données et sorties générées
+data/raw/*.csv
+data/processed/*
+!data/processed/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+reports/
+mlruns/
+
+# Système
+.DS_Store
